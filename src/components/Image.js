@@ -10,7 +10,7 @@ const ImageContainer = styled.div`
   & > img {
     max-width: 100%;
     object-fit: cover;
-    height: auto;
+    min-height: 100%;
   }
 `;
 
