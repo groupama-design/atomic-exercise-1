@@ -1,10 +1,23 @@
 import React from 'react';
-import { string } from 'prop-types';
+import styled from 'styled-components';
+import { string, number } from 'prop-types';
 
-const Title = ({ children }) => <h3>{{ children }}</h3>;
+const StyledTitle = styled.span`
+  font-family: 'Roboto Condensed', sans-serif;
 
-Title.propTypes = {
-  children: string,
+  h1 {
+    font-size: 12px;
+  }
+`;
+
+const TitleComponent = ({ children, level = 1 }) => {
+  const Title = StyledTitle.withComponent(`h${level}`);
+  return <Title>{children}</Title>;
 };
 
-export default Title;
+TitleComponent.propTypes = {
+  children: string,
+  tag: number,
+};
+
+export default TitleComponent;

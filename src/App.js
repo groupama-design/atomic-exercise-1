@@ -1,14 +1,24 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Atomic exercise</h1>
-      <h2>Cards</h2>
+import { Provider as MainProvider } from 'contexts/MainContext';
 
-      <h2>Counter</h2>
-    </div>
-  );
-}
+import MainTheme from 'themes/main';
+import GlobalStyle from 'styles';
+
+import { Container, Title } from 'components';
+import { CardList } from 'containers';
+
+const App = () => (
+  <MainProvider>
+    <MainTheme>
+      <GlobalStyle />
+      <Container>
+        <Title>Atomic exercise</Title>
+        <CardList title="Cards" />
+        <Title level={2}>Counter</Title>
+      </Container>
+    </MainTheme>
+  </MainProvider>
+);
 
 export default App;

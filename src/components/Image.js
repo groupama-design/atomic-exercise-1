@@ -1,10 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
 import { string } from 'prop-types';
 
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+
+  & > img {
+    max-width: 100%;
+    object-fit: cover;
+    height: auto;
+  }
+`;
+
 const Image = ({ src, alt }) => (
-  <div>
+  <ImageContainer>
     <img src={src} alt={alt} />
-  </div>
+  </ImageContainer>
 );
 
 Image.propTypes = {
