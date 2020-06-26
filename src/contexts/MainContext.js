@@ -1,24 +1,31 @@
 import React, { useEffect, useState } from 'react';
 
 import data from 'api.json';
-console.log(data);
 
 const Context = React.createContext();
-
 const Provider = ({ children }) => {
   const [isLoading, setLoading] = useState(true);
-  const [count, setCount] = useState(0);
-  const [color, setColor] = useState(0);
+  const [count, setCount] = useState(localStorage.getItem('count') || 0);
+  const [color, setColor] = useState(null);
 
-  const randomizeColor = () => {
-    setColor('');
+  const incrementRandomize = () => {
+    // Randomize color
+    setColor(Math.round(Math.random() * 7));
+
+    // Increment
+    setCount((prev) => ++prev);
+
+    // Persist
+    localStorage.setItem('count', count + 1);
   };
 
-  const increment = () => {
-    setCount((prev) => ++prev);
+  const resetCounter = () => {
+    setCount(0);
+    localStorage.setItem('count', 0);
   };
 
   useEffect(() => {
+    // Test loading
     setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -32,9 +39,9 @@ const Provider = ({ children }) => {
         color,
         count,
         data,
-        increment,
+        incrementRandomize,
         isLoading,
-        randomizeColor,
+        resetCounter,
       }}>
       {children}
     </Context.Provider>

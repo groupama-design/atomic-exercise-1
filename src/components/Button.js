@@ -5,7 +5,6 @@ import { darken } from 'polished';
 import { func, string } from 'prop-types';
 
 const StyledButton = styled.button`
-  align-self: flex-end;
   padding: 15px 13px 18px;
 
   color: white;

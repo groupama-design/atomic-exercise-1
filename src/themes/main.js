@@ -2,15 +2,14 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 export const main = {
-  font: {
-    size: 16,
-    family: 'Roboto',
-    weight: 'normal',
-  },
   colors: {
     default: 'black',
     orange: '#FF7B00',
     green: '#00A174',
+    red: 'red',
+    blue: 'blue',
+    pink: 'pink',
+    yellow: 'yellow',
   },
 };
 

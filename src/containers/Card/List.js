@@ -8,7 +8,9 @@ import { Loader, Title } from 'components';
 
 const StyledList = styled.ul`
   display: flex;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
 `;
 
 const List = () => {
