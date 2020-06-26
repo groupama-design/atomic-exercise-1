@@ -4,6 +4,7 @@ import { string } from 'prop-types';
 
 const StyledText = styled.div`
   margin-bottom: 15px;
+  font-size: 14px;
 `;
 
 // From WYSIWYG, children here is might be raw HTML
