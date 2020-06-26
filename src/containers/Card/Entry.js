@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import MainContext from 'contexts/MainContext';
 import { Image, Title, Text, Button } from 'components';
 
+import { ReactComponent as ArrowIcon } from 'icon-arrow-right.svg';
+
 const StyledCard = styled.li`
   display: flex;
   flex-direction: column;
@@ -43,7 +45,10 @@ const Card = ({ title = '', subtitle = '', content = '' }) => {
         </Title>
         <Title level={4}>{subtitle}</Title>
         <Text>{content}</Text>
-        <Button handleClick={incrementRandomize}>Lire L'article</Button>
+        <Button handleClick={incrementRandomize}>
+          Lire L'article
+          <ArrowIcon style={{ width: 14, height: 14, marginLeft: 10 }} />
+        </Button>
       </div>
     </StyledCard>
   );
