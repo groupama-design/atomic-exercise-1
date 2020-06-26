@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { string, number } from 'prop-types';
+import { number, node } from 'prop-types';
 
 const StyledTitle = styled.span`
   margin: 0 0 10px;
@@ -20,7 +20,7 @@ const TitleComponent = ({ children, level = 1, color = 0 }) => {
 };
 
 TitleComponent.propTypes = {
-  children: string,
+  children: node,
   color: number,
   tag: number,
 };

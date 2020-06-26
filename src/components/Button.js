@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-import { func, string } from 'prop-types';
+import { func, node } from 'prop-types';
 
 const StyledButton = styled.button`
   display: flex;
@@ -32,7 +32,7 @@ const Button = ({ children, handleClick }) => (
 );
 
 Button.propTypes = {
-  children: string,
+  children: node,
   handleClick: func,
 };
 

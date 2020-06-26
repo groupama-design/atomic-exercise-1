@@ -38,7 +38,7 @@ const Card = ({ title = '', subtitle = '', content = '' }) => {
 
   return (
     <StyledCard>
-      <Image src={'./assets/image.png'} alt={subtitle} />
+      <Image src={'./assets/image.png'} alt={title} />
       <div className="content">
         <Title level={3} color={color || 2}>
           {title}
